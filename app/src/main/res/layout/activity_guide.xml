@@ -13,7 +13,6 @@
     </View>
     <!--按钮容器-->
     <LinearLayout
-        android:background="#f00"
         android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -26,6 +25,7 @@
             android:layout_weight="1"/>
         <!--登陆注册按钮-->
         <Button
+            android:background="@drawable/shape_color_primary"
             android:text="@string/login_or_register"
             android:layout_width="@dimen/button_width_large"
             android:layout_height="@dimen/button_height"/>

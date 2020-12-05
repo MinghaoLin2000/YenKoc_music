@@ -6,4 +6,5 @@
     <dimen name="padding_large">20dp</dimen>
     <dimen name="button_width_large">130dp</dimen>
     <dimen name="button_height">40dp</dimen>
+    <dimen name="radius_button">20dp</dimen>
 </resources>
