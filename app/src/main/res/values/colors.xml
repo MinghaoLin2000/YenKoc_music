@@ -7,4 +7,6 @@
     <color name="light_grey">#aaaaaa</color>
     <!--全局背景-->
     <color name="background">@android:color/white</color>
+    <!--常用颜色-->
+    <color name="white">@android:color/white</color>
 </resources>
