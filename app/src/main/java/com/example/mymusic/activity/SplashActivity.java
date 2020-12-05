@@ -3,6 +3,7 @@ package com.example.mymusic.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import com.example.mymusic.R;
 /**
  * 启动界面
  */
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseCommonActivity {
     private static final String TAG="SplashActivity";
     /**
      * 下一步常量
@@ -49,7 +50,13 @@ public class SplashActivity extends AppCompatActivity {
         //关闭当前界面
         finish();
          */
-        startActivityAfterFinishThis(GuideActivity.class);
+        if(sp.isShowGuide()){
+            startActivityAfterFinishThis(GuideActivity.class);
+        }else
+        {
+            startActivityAfterFinishThis(LoginOrRegisterActivity.class);
+        }
+
     }
 
 
@@ -57,24 +64,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        //设置界面全屏
-        //获取decorView
-        View decorView=getWindow().getDecorView();
-        //判断版本
-        if(Build.VERSION.SDK_INT>11&&Build.VERSION.SDK_INT<19)
-        {
-            //11-18
-            decorView.setSystemUiVisibility(View.GONE);
-        }else if(Build.VERSION.SDK_INT>=19)
-        {
-            //19以及以上版本
-            //SYSTEM_UI_FLAG_HIDE_NAVIGATION:隐藏导航栏
-            //SYSTEM_UI_FLAG_IMMERSIVE_STICKY:从状态栏下拉会半透明悬浮显示一会儿状态栏和导航栏
-            //SYSTEM_UI_FALG_FUULLSCREEN:全屏
-            int options=View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY | View.SYSTEM_UI_FLAG_FULLSCREEN;
-            //设置到控件
-            decorView.setSystemUiVisibility(options);
-        }
+        fullScreen();
         //延时3秒
         handler.postDelayed(new Runnable() {
             @Override
@@ -84,21 +74,26 @@ public class SplashActivity extends AppCompatActivity {
         },DEFAULT_DELAY_TIME);
     }
 
-    /**
-     * 启动界面
-     * @param clazz
-     */
-    private void startActivity(Class<?> clazz)
-    {
-        Intent intent =new Intent(this,clazz);
-        startActivity(intent);
-    }
-    /**
-     * 启动界面并关闭当前界面
-     */
-    private void startActivityAfterFinishThis(Class<?> clazz)
-    {
-        startActivity(clazz);
-        finish();
+    @Override
+    protected void initDatum() {
+        super.initDatum();
+        /*
+        //测试使用偏好设置
+        //获取偏好设置类
+        SharedPreferences preferences=getSharedPreferences("ixuea",MODE_PRIVATE);
+        //保存一个字符串"我们是爱学啊"
+        preferences.edit().putString("username","我们是爱学啊").commit();
+        //获取保存的值
+        String username=preferences.getString("username",null);
+        //打印
+        Log.d(TAG, "initDatum: "+username);
+        //删除
+        preferences.edit().remove("username").commit();
+        //再次获取值
+        username=preferences.getString("username",null);
+        //打印
+        Log.d(TAG, "initDatum: "+username);
+
+         */
     }
 }
