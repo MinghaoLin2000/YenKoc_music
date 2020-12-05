@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <!--end 启动界面-->
+        <activity android:name=".activity.GuideActivity"></activity>
         <!--主界面-->
         <activity android:name=".MainActivity">
 
