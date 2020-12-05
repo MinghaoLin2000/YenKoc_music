@@ -2,6 +2,7 @@ package com.example.mymusic.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
@@ -41,7 +42,16 @@ public class SplashActivity extends AppCompatActivity {
     private void next()
     {
         Log.e(TAG,"next");
+        /*
+        //创建intent
+        Intent intent =new Intent(this,GuideActivity.class);
+        startActivity(intent);
+        //关闭当前界面
+        finish();
+         */
+        startActivityAfterFinishThis(GuideActivity.class);
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,5 +82,23 @@ public class SplashActivity extends AppCompatActivity {
             handler.sendEmptyMessage(MESSAGE_NEXT);
             }
         },DEFAULT_DELAY_TIME);
+    }
+
+    /**
+     * 启动界面
+     * @param clazz
+     */
+    private void startActivity(Class<?> clazz)
+    {
+        Intent intent =new Intent(this,clazz);
+        startActivity(intent);
+    }
+    /**
+     * 启动界面并关闭当前界面
+     */
+    private void startActivityAfterFinishThis(Class<?> clazz)
+    {
+        startActivity(clazz);
+        finish();
     }
 }
