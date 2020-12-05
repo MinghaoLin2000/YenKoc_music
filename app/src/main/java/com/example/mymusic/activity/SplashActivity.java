@@ -2,8 +2,12 @@ package com.example.mymusic.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.nfc.Tag;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.util.Log;
 import android.view.View;
 
 import com.example.mymusic.R;
@@ -12,6 +16,32 @@ import com.example.mymusic.R;
  * 启动界面
  */
 public class SplashActivity extends AppCompatActivity {
+    private static final String TAG="SplashActivity";
+    /**
+     * 下一步常量
+     */
+    private static final int MESSAGE_NEXT=100;
+    /**
+     * 默认延时时间
+     */
+    private static final long DEFAULT_DELAY_TIME=3000;
+    private Handler handler=new Handler(){
+        public void handleMessage(Message msg)
+        {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case MESSAGE_NEXT:
+                    next();
+                    break;
+                    
+            }
+            
+        }
+    };
+    private void next()
+    {
+        Log.e(TAG,"next");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,5 +65,12 @@ public class SplashActivity extends AppCompatActivity {
             //设置到控件
             decorView.setSystemUiVisibility(options);
         }
+        //延时3秒
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+            handler.sendEmptyMessage(MESSAGE_NEXT);
+            }
+        },DEFAULT_DELAY_TIME);
     }
 }
