@@ -2,4 +2,6 @@
     <string name="app_name">My Application</string>
     <!--版权文本-->
     <string name="copyright">江西师范大学@林明皓</string>
+    <!--登陆/注册-->
+    <string name="login_or_register">登陆/注册</string>
 </resources>

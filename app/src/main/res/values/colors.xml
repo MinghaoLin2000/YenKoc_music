@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     <!--亮一点的灰色-->
     <color name="light_grey">#aaaaaa</color>
+    <!--全局背景-->
+    <color name="background">@android:color/white</color>
 </resources>
