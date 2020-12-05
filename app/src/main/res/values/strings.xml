@@ -4,4 +4,6 @@
     <string name="copyright">江西师范大学@林明皓</string>
     <!--登陆/注册-->
     <string name="login_or_register">登陆/注册</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
