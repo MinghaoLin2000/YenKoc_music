@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mymusic.R;
 
-public class GuideActivity extends AppCompatActivity implements View.OnClickListener {
+public class GuideActivity extends BaseActivity implements View.OnClickListener {
     private Button bt_login_or_register;
     private Button bt_enter;
     private static final String TAG="GuideActivity";
@@ -25,11 +25,26 @@ public class GuideActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_guide);
         //隐藏状态栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+
+    }
+
+    @Override
+    protected void initViews() {
+        super.initViews();
+        //隐藏状态栏
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //找控件
         //登陆注册按钮
         bt_login_or_register=findViewById(R.id.bt_login_or_register);
         //立即体验按钮
         bt_enter = findViewById(R.id.bt_enter);
+    }
+
+    @Override
+    protected void initListeners() {
+        super.initListeners();
         //设置点击事件
         bt_login_or_register.setOnClickListener(this);
         //立即体验按钮
