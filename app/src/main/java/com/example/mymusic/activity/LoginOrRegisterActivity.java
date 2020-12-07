@@ -31,11 +31,16 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     @Override
     protected void initViews() {
         super.initViews();
+        //显示亮色状态
+        lightStatusBar();
+
         //登陆按钮
         bt_login=findViewById(R.id.bt_login);
         //注册按钮
         bt_register = findViewById(R.id.bt_register);
     }
+
+
 
     @Override
     protected void initListeners() {
@@ -57,11 +62,12 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
             case R.id.bt_login:
                 //登陆按钮
                 Log.d(TAG, "onClick login");
-                startActivityAfterFinishThis(LoginActivity.class);
+                startActivity(LoginActivity.class);
                 break;
             case R.id.bt_register:
                 //登陆按钮
                 Log.d(TAG, "onClick register");
+                startActivity(RegisterActivity.class);
                 break;
 
         }
