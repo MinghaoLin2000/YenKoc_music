@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mymusic.MainActivity;
 import com.example.mymusic.R;
+import com.example.mymusic.fragment.GuideFragment;
 import com.example.mymusic.util.PreferenceUtil;
 
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
@@ -38,6 +39,8 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         bt_login_or_register=findViewById(R.id.bt_login_or_register);
         //立即体验按钮
         bt_enter = findViewById(R.id.bt_enter);
+        //测试显示fragment
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, GuideFragment.newInstance()).commit();
     }
 
     @Override

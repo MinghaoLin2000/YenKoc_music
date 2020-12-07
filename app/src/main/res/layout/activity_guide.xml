@@ -5,12 +5,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <!--占位控件-->
-    <View
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
 
-    </View>
+    </FrameLayout>
     <!--按钮容器-->
     <LinearLayout
         android:gravity="center_vertical"
