@@ -38,6 +38,7 @@
             android:layout_height="wrap_content">
             <!--登陆按钮-->
             <Button
+                android:id="@+id/bt_login"
                 android:layout_width="match_parent"
                 android:background="@drawable/selector_color_primary_reverse"
                 android:textColor="@drawable/selector_text_color_primary"
@@ -45,7 +46,7 @@
                 android:text="@string/login" />
             <!--注册按钮-->
             <Button
-
+                android:id="@+id/bt_register"
                 android:layout_marginTop="@dimen/padding_large"
                 android:layout_width="match_parent"
                 android:background="@drawable/selector_color_primary_reverse"
