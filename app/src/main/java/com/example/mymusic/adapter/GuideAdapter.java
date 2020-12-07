@@ -1,5 +1,7 @@
 package com.example.mymusic.adapter;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -14,17 +16,14 @@ import java.util.List;
 /**
  * 引导界面适配器
  */
-public class GuideAdapter extends FragmentPagerAdapter {
-    /*
-    列表数据源
-     */
-    protected List<Integer> datum=new ArrayList<>();
+public class GuideAdapter extends BaseFragmentPagerAdapter<Integer> {
+
     /**
      *构造方法
      */
-    public GuideAdapter(@NonNull FragmentManager fm)
+    public GuideAdapter(Context context, @NonNull FragmentManager fm)
     {
-        super(fm);
+        super(context,fm);
     }
 
     /**
@@ -40,32 +39,5 @@ public class GuideAdapter extends FragmentPagerAdapter {
         return GuideFragment.newInstance(getData(position));
     }
 
-    /**
-     * 获取当前位置
-     * @param position
-     * @return
-     */
-    private int getData(int position) {
-        return datum.get(position);
-    }
 
-    /**
-     * 返回有多少个
-     * @param
-     * @return
-     */
-    @Override
-    public int getCount() {
-        return datum.size();
-    }
-    public void setDatum(List<Integer> datum)
-    {
-        if(datum!=null&&datum.size()>0)
-        {
-            this.datum.clear();
-            this.datum.addAll(datum);
-            //通知数据改变了
-            notifyDataSetChanged();
-        }
-    }
 }

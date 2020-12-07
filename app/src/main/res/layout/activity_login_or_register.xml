@@ -4,10 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.LoginOrRegisterActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="登陆注册界面"/>
+    <!--顶部-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <!--背景-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_login"/>
+        <!--logo-->
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="@dimen/login_logo_height"
+            android:layout_height="@dimen/login_logo_height"/>
+    </RelativeLayout>
+    <!--底部-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#0f0"
+        android:layout_weight="1">
+        <!--登陆注册按钮容器-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/padding_large"
+            android:layout_marginRight="@dimen/padding_large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--登陆按钮-->
+            <Button
+                android:layout_width="match_parent"
+                android:background="@drawable/selector_color_primary_reverse"
+                android:textColor="@drawable/selector_text_color_primary"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/login"/>
+            <!--注册按钮-->
+            <Button
+
+                android:layout_marginTop="@dimen/padding_large"
+                android:layout_width="match_parent"
+                android:background="@drawable/selector_color_primary_reverse"
+                android:textColor="@drawable/selector_text_color_primary"
+                android:layout_height="@dimen/button_height"
+                android:text="@string/register"></Button>
+
+        </LinearLayout>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <!--微信登陆-->
+           <ImageView
+               android:src="@drawable/login_qq"
+               android:clickable="true"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"/>
+
+       </LinearLayout>
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -20,6 +20,8 @@ import com.example.mymusic.util.PreferenceUtil;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.relex.circleindicator.CircleIndicator;
+
 public class GuideActivity extends BaseCommonActivity implements View.OnClickListener {
     private Button bt_login_or_register;
     private Button bt_enter;
@@ -28,7 +30,14 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
      * 左右滚动控件
      */
     private ViewPager vp;
+    /**
+     * 适配器
+     */
     private GuideAdapter adapter;
+    /**
+     * 指示器
+     */
+    private CircleIndicator ci;
 
     /**
      * 当界面创建时，回调该函数
@@ -47,6 +56,8 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
         hideStatsuBar();
         //ViewPager控件
         vp=findViewById(R.id.vp);
+        //指示器
+        ci=findViewById(R.id.ci);
         //找控件
         //登陆注册按钮
         bt_login_or_register=findViewById(R.id.bt_login_or_register);
@@ -60,9 +71,13 @@ public class GuideActivity extends BaseCommonActivity implements View.OnClickLis
     protected void initDatum() {
         super.initDatum();
         //创建适配器
-        adapter=new GuideAdapter(getSupportFragmentManager());
+        adapter=new GuideAdapter(getMainActivity(),getSupportFragmentManager());
         //设置适配器到控件
         vp.setAdapter(adapter);
+        //让指示器根据列表控件配合工作
+        ci.setViewPager(vp);
+        //适配器注册数据源观察者
+        adapter.registerDataSetObserver(ci.getDataSetObserver());
         //准备数据
         List<Integer> datum=new ArrayList<>();
         datum.add(R.drawable.guide1);
