@@ -21,7 +21,6 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/padding_large"
         android:layout_centerHorizontal="true"
-
         android:src="@drawable/splash_logo" />
     <!--版权-->
     <TextView
