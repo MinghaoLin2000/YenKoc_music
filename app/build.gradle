@@ -12,12 +12,34 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        //开启MultiDex
+        multiDexEnabled true
+        //渠道相关
+        flavorDimensions "versionCode"
     }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    //渠道配置
+    productFlavors{
+        //开发环境
+        dev {
+            //API端点
+            buildConfigField('String',"ENDPOINT",'"http://dev-my-cloud-music-api-rails.ixuea.com/"')
+
+            dimension = minSdkVersion
+        }
+
+        //正式环境
+        prod {
+            //API端点
+            buildConfigField 'String','ENDPOINT','"http://api-courses-misuc.ixuea.com/"'
+
+            dimension = minSdkVersion
         }
     }
     //将源码兼容版本设置为Java 8
@@ -53,7 +75,15 @@ dependencies {
     //toast工具类
     //https://github.com/GrenderG/Toasty
     implementation 'com.github.GrenderG:Toasty:1.4.2'
-
+//MultiDex
+    implementation "androidx.multidex:multidex:2.0.0"
+    //使用了Android响应式编程
+    //RxJava和RxAndroid区别？
+    //简单来说：就是RxAndroid在RxJava的基础上
+    //优化了一些功能
+    //增强了Android特有的功能
+    //https://github.com/ReactiveX/RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 
 
 

@@ -10,7 +10,9 @@
     <string name="register">注 册</string>
     <string name="other_login">其他登录方式</string>
     <string name="enter_username">请输入手机号/邮箱</string>
-    <string name="enter_password">请输入密码</string>
+    <string name="enter_password">请输入密码(6~15位)</string>
     <string name="forget_password">忘记密码?</string>
     <string name="login_success">登录成功</string>
+    <string name="error_username_format">用户名格式不正确</string>
+    <string name="error_password_format">密码格式不正确</string>
 </resources>

@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.example.mymusic.R;
 import com.example.mymusic.util.LogUtil;
+import com.example.mymusic.util.StringUtil;
 import com.example.mymusic.util.ToastUtil;
 
 import org.apache.commons.lang3.StringUtils;
@@ -48,17 +49,23 @@ public class LoginActivity extends BaseTitleActivity{
         {
             LogUtil.d(TAG,"conLoginClick user empty");
             //Toast.makeText(getMainActivity(),R.string.enter_username,Toast.LENGTH_SHORT).show();
-            ToastUtil.errorShortToast(getMainActivity(),R.string.enter_username);
+            ToastUtil.errorShortToast(R.string.enter_username);
+        }
+        //如果用户名不是手机号也不是邮箱
+        //就是格式错误
+        if(!(StringUtil.isPhone(username)||StringUtil.isEmail(username)))
+        {
+            ToastUtil.errorShortToast(R.string.error_username_format);
+            return;
         }
         //获取密码
         String password=et_password.getText().toString().trim();
-        if(TextUtils.isEmpty(password))
-        {
-            LogUtil.w(TAG,"onLoginClick password empty");
-            Toast.makeText(this, R.string.enter_password, Toast.LENGTH_SHORT).show();
-        }
+       if(!StringUtil.isPassword(password))
+       {
+           ToastUtil.errorShortToast(R.string.error_password_format);
+       }
         //调用登陆方法
-        ToastUtil.successShortToast(getMainActivity(),R.string.login_success);
+        ToastUtil.successShortToast(R.string.login_success);
     }
     //忘记密码按钮点击
     @OnClick(R.id.bt_forget)
