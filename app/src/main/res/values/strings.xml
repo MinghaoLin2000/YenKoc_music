@@ -9,4 +9,7 @@
     <string name="login">登 录</string>
     <string name="register">注 册</string>
     <string name="other_login">其他登录方式</string>
+    <string name="enter_username">请输入手机号/邮箱</string>
+    <string name="enter_password">请输入密码</string>
+    <string name="forget_password">忘记密码?</string>
 </resources>

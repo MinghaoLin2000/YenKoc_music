@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.mymusic.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 /**
  * 登陆注册界面
  */
@@ -16,11 +21,13 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     /**
      * 登陆按钮
      */
-    private Button bt_login;
+    @BindView(R.id.bt_login)
+    Button bt_login;
     /**
      * 注册按钮
      */
-    private Button bt_register;
+    @BindView(R.id.bt_register)
+     Button bt_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,11 +38,13 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     @Override
     protected void initViews() {
         super.initViews();
+        //初始化ButterKnife
+        //ButterKnife.bind(this);
         //显示亮色状态
         lightStatusBar();
 
         //登陆按钮
-        bt_login=findViewById(R.id.bt_login);
+        //bt_login=findViewById(R.id.bt_login);
         //注册按钮
         bt_register = findViewById(R.id.bt_register);
     }
@@ -46,9 +55,9 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     protected void initListeners() {
         super.initListeners();
         //登陆按钮
-        bt_login.setOnClickListener(this);
+        //bt_login.setOnClickListener(this);
         //注册按钮
-        bt_register.setOnClickListener(this);
+        //bt_register.setOnClickListener(this);
 
     }
 
@@ -59,18 +68,37 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.bt_login:
+           /* case R.id.bt_login:
                 //登陆按钮
                 Log.d(TAG, "onClick login");
                 startActivity(LoginActivity.class);
                 break;
+
+            */
+            /*
             case R.id.bt_register:
                 //登陆按钮
                 Log.d(TAG, "onClick register");
                 startActivity(RegisterActivity.class);
                 break;
 
+             */
         }
+    }
 
+    /**
+     *  登陆按钮点击
+     */
+    @OnClick(R.id.bt_login)
+    public void onLoginClick()
+    {
+        startActivity(LoginActivity.class);
+    }
+    /**
+     * 注册按钮点击
+     */
+    public void onRegisterClick()
+    {
+        startActivity(RegisterActivity.class);
     }
 }
