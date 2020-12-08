@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--layer-list:也是一种drawable，类似ps中的涂层-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:top="-1dp"
+        android:right="-1dp"
+        android:left="-1dp">
+        <shape>
+            <!--填充颜色为透明-->
+            <solid android:color="@color/transparent"/>
+            <!--边框为灰色-->
+            <stroke android:width="@dimen/divider_small"
+                android:color="@color/light_grey"/>
+        </shape>
+    </item>
+
+</layer-list>

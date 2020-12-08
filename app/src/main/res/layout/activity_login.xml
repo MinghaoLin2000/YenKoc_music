@@ -18,17 +18,20 @@
             >
             <!--这里不能使用maxLength限制最长字符数,因为我们这里用户名还有邮箱-->
             <EditText
+                android:id="@+id/et_username"
                 style="@style/EditText"
                 android:inputType="textEmailAddress"
                 android:hint="@string/enter_username"
                 />
             <EditText
+                android:id="@+id/et_password"
                 style="@style/EditText"
                 android:hint="@string/enter_password"
                 android:inputType="textPassword"
                 />
             <!--登陆按钮-->
             <Button
+                android:id="@+id/bt_login"
                 android:textColor="@drawable/selector_text_color_primary_reverse"
                 android:background="@drawable/selector_color_primary"
                 android:text="@string/login"
@@ -38,6 +41,7 @@
                 />
             <!--去掉边框-->
             <Button
+                android:id="@+id/bt_forget"
                 android:background="@color/transparent"
                 style="?attr/borderlessButtonStyle"
                 android:textColor="@color/light_grey"

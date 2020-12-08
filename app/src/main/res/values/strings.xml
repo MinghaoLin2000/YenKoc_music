@@ -12,4 +12,5 @@
     <string name="enter_username">请输入手机号/邮箱</string>
     <string name="enter_password">请输入密码</string>
     <string name="forget_password">忘记密码?</string>
+    <string name="login_success">登录成功</string>
 </resources>
