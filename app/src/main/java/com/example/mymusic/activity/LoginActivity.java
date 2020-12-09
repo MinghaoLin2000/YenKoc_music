@@ -14,7 +14,10 @@ import android.widget.Toast;
 import com.example.mymusic.R;
 import com.example.mymusic.api.Api;
 import com.example.mymusic.api.Service;
+import com.example.mymusic.domain.Sheet;
 import com.example.mymusic.domain.SheetDetailWrapper;
+import com.example.mymusic.domain.SheetListWrapper;
+import com.example.mymusic.domain.response.DetailResponse;
 import com.example.mymusic.util.Constant;
 import com.example.mymusic.util.LoadingUtil;
 import com.example.mymusic.util.LogUtil;
@@ -129,6 +132,7 @@ public class LoginActivity extends BaseTitleActivity{
                 });
 
          */
+        /*
         //使用重构后的api
         Api.getInstance().sheetDetail("1").subscribe(new Observer<SheetDetailWrapper>() {
             @Override
@@ -157,6 +161,8 @@ public class LoginActivity extends BaseTitleActivity{
                 LogUtil.d(TAG,"onComplete");
             }
         });
+
+         */
         /*
         //测试加载提示框
         LoadingUtil.showLoading(getMainActivity());
@@ -169,6 +175,53 @@ public class LoginActivity extends BaseTitleActivity{
         },3000);
 
          */
+        /*
+        //请求歌单列表
+        Api.getInstance().sheets()
+                .subscribe(new Observer<SheetListWrapper>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(@NonNull SheetListWrapper sheetListWrapper) {
+                        LogUtil.d(TAG,"onNext:"+sheetListWrapper.getData().size());
+                    }
+
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+
+         */
+        Api.getInstance().sheetDetail("1").subscribe(new Observer<DetailResponse<Sheet>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull DetailResponse<Sheet> sheetDetailResponse) {
+        LogUtil.d(TAG,"onNext:"+sheetDetailResponse.getData().getTitle());
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
         /*
         //获取用户名
         String username=et_username.getText().toString().trim();
