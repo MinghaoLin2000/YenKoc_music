@@ -20,7 +20,7 @@ public class ToastUtil {
         ToastUtil.context=context;
 
     }
-    public static void errorShortToast( @StringRes int id) {
+    public static void errorShortToast(@StringRes int id) {
         Toasty.error(context,id,Toasty.LENGTH_SHORT).show();
 
     }

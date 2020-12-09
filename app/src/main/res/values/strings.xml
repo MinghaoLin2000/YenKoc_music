@@ -15,4 +15,13 @@
     <string name="login_success">登录成功</string>
     <string name="error_username_format">用户名格式不正确</string>
     <string name="error_password_format">密码格式不正确</string>
+    <string name="error_network_unknown_host">找不到服务器，请稍后再试</string>
+    <string name="error_network_connect">连接失败，请稍后再试过!</string>
+    <string name="error_network_timeout">连接超时，请稍后再试</string>
+    <string name="error_network_not_auth">登陆信息过期了，请重新登录！</string>
+    <string name="error_network_not_permission">你没有权限访问</string>
+    <string name="error_network_not_found">你访问的资源不存在</string>
+    <string name="error_network_server">服务器错误，请稍后再试！</string>
+    <string name="error_network_unknown">未知错误</string>
+    <string name="loading">快点啊，等到花都谢了</string>
 </resources>
