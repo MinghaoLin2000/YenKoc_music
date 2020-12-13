@@ -4,6 +4,7 @@ import com.example.mymusic.domain.Sheet;
 import com.example.mymusic.domain.SheetDetailWrapper;
 import com.example.mymusic.domain.SheetListWrapper;
 import com.example.mymusic.domain.response.DetailResponse;
+import com.example.mymusic.domain.response.ListResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -19,7 +20,7 @@ import retrofit2.http.Path;
  */
 public interface Service {
     @GET("v1/sheets")
-    Observable<SheetListWrapper> sheets();
+    Observable<ListResponse<Sheet>> sheets();
     /**
      * 歌单详情
      * 相对路径

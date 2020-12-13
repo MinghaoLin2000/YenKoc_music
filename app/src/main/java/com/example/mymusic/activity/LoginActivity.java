@@ -18,6 +18,9 @@ import com.example.mymusic.domain.Sheet;
 import com.example.mymusic.domain.SheetDetailWrapper;
 import com.example.mymusic.domain.SheetListWrapper;
 import com.example.mymusic.domain.response.DetailResponse;
+import com.example.mymusic.domain.response.ListResponse;
+import com.example.mymusic.listener.HttpObserver;
+import com.example.mymusic.listener.ObserverAdapter;
 import com.example.mymusic.util.Constant;
 import com.example.mymusic.util.LoadingUtil;
 import com.example.mymusic.util.LogUtil;
@@ -201,6 +204,7 @@ public class LoginActivity extends BaseTitleActivity{
                 });
 
          */
+        /*
         Api.getInstance().sheetDetail("1").subscribe(new Observer<DetailResponse<Sheet>>() {
             @Override
             public void onSubscribe(@NonNull Disposable d) {
@@ -222,6 +226,50 @@ public class LoginActivity extends BaseTitleActivity{
 
             }
         });
+        */
+        /*
+        //使用ListResponse
+        Api.getInstance().sheets().subscribe(new Observer<ListResponse<Sheet>>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onNext(@NonNull ListResponse<Sheet> sheetListResponse) {
+                LogUtil.d(TAG,"onNext:"+sheetListResponse.getData().size());
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+         */
+        /*
+        //使用ObserverAdapter
+        Api.getInstance().sheetDetail("1").subscribe(new ObserverAdapter<DetailResponse>(){
+            @Override
+            public void onNext(@NonNull DetailResponse detailResponse) {
+                super.onNext(detailResponse);
+            }
+        });
+        */
+
+         Api.getInstance().sheetDetail("1").subscribe(new HttpObserver<DetailResponse<Sheet>>(){
+
+             @Override
+             public void onSucceeded(DetailResponse<Sheet> data) {
+                 Log.d(TAG, "onSucceeded: "+data.getData().getTitle());
+             }
+         });
         /*
         //获取用户名
         String username=et_username.getText().toString().trim();
