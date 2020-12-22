@@ -68,21 +68,21 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-           /* case R.id.bt_login:
+           case R.id.bt_login:
                 //登陆按钮
                 Log.d(TAG, "onClick login");
-                startActivity(LoginActivity.class);
+                //startActivity(LoginActivity.class);
                 break;
 
-            */
-            /*
+
+
             case R.id.bt_register:
                 //登陆按钮
                 Log.d(TAG, "onClick register");
-                startActivity(RegisterActivity.class);
+                //startActivity(RegisterActivity.class);
                 break;
 
-             */
+
         }
     }
 
@@ -97,6 +97,7 @@ public class LoginOrRegisterActivity extends BaseCommonActivity implements View.
     /**
      * 注册按钮点击
      */
+    @OnClick(R.id.bt_register)
     public void onRegisterClick()
     {
         startActivity(RegisterActivity.class);

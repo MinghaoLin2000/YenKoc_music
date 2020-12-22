@@ -11,4 +11,5 @@
     <color name="white">@android:color/white</color>
     <!--透明颜色-->
     <color name="transparent">@android:color/transparent</color>
+    <color name="colorPink">#EEFFC0CB</color>
 </resources>

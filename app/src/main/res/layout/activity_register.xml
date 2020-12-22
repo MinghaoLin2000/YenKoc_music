@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.RegisterActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="注册"
-        />
 
-</LinearLayout>
+    <!--Toolbar-->
+    <include layout="@layout/tool_bar" />
+
+    <!--内容部分-->
+    <LinearLayout
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_margin">
+
+        <!--昵称输入框-->
+        <EditText
+            android:id="@+id/et_nickname"
+            style="@style/EditText"
+            android:hint="@string/enter_nickname"
+            android:maxLength="10" />
+
+        <!--手机号输入框-->
+        <EditText
+            android:id="@+id/et_phone"
+            style="@style/EditText"
+            android:hint="@string/enter_phone"
+            android:maxLength="11"
+            android:inputType="phone" />
+
+        <!--邮箱输入框-->
+        <EditText
+            android:id="@+id/et_email"
+            style="@style/EditText"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress" />
+
+        <!--密码输入框-->
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/EditText"
+            android:hint="@string/enter_password"
+            android:maxLength="15"
+            android:inputType="textPassword" />
+
+        <!--确认密码输入框-->
+        <EditText
+            android:id="@+id/et_confirm_password"
+            style="@style/EditText"
+            android:hint="@string/enter_confirm_password"
+            android:maxLength="15"
+            android:inputType="textPassword" />
+
+        <!--注册按钮-->
+        <Button
+            android:id="@+id/bt_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/padding_large"
+            android:text="@string/register"
+            android:textColor="@drawable/selector_text_color_primary_reverse"
+            android:background="@drawable/selector_color_primary" />
+
+        <!--用户协议按钮-->
+        <Button
+            android:id="@+id/bt_agreement"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="@dimen/padding_large"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@color/transparent"
+            android:text="@string/hint_agreement"
+            android:textColor="@color/light_grey" />
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.mymusic"
-        minSdkVersion 26
-        targetSdkVersion 30
+        minSdkVersion 22
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
@@ -55,6 +55,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
@@ -116,6 +117,7 @@ dependencies {
 //https://github.com/ReactiveX/RxAndroid
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
 //end 请求网络相关
+    implementation 'androidx.recyclerview:recyclerview:1.0.0-alpha1'
 
 
 

@@ -24,4 +24,14 @@
     <string name="error_network_server">服务器错误，请稍后再试！</string>
     <string name="error_network_unknown">未知错误</string>
     <string name="loading">快点啊，等到花都谢了</string>
+    <string name="enter_nickname">请输入用户名</string>
+    <string name="enter_phone">请输入手机号</string>
+    <string name="enter_email">请输入邮箱号</string>
+    <string name="enter_confirm_password">重新输入一次密码</string>
+    <string name="hint_agreement">江西师范大学@林明皓</string>
+    <string name="error_nickname_format">昵称格式不正确</string>
+    <string name="error_phone_format">手机号格式不正确</string>
+    <string name="error_email_format">邮箱格式不正确</string>
+    <string name="error_confirm_password_format">确认密码格式不正确</string>
+    <string name="error_confirm_password">两次密码不一致</string>
 </resources>
